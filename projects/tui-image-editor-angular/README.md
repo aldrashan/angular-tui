@@ -1,24 +1,71 @@
-# TuiImageEditor
+# Angular-Tui
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
+Based on the UI component of [tui.image-editor](https://github.com/nhn/tui.image-editor).
 
-## Code scaffolding
+## 💾 Install
+```sh
+npm install --save tui-image-editor-angular
+```
 
-Run `ng generate component component-name --project tui-image-editor` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project tui-image-editor`.
-> Note: Don't forget to add `--project tui-image-editor` or else it will be added to the default project in your `angular.json` file. 
+Add needed package to NgModule imports:
+```sh
+import { TuiImageEditorModule } from 'tui-image-editor-angular';
 
-## Build
+@NgModule({
+  ...
+  imports: [TuiImageEditorModule,...]
+  ...
+})
+```
 
-Run `ng build tui-image-editor` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import css:
+```scss
+@import "tui-image-editor-angular/src/theme.scss";
 
-## Publishing
+...
+```
 
-After building your library with `ng build tui-image-editor`, go to the dist folder `cd dist/tui-image-editor` and run `npm publish`.
+## 📊 Usage
+```html
+<tui-image-editor></tui-image-editor>
+```
 
-## Running unit tests
+```js
+@Component({
+  selector: 'tui-image-editor'
+})
+export class TuiImageEditorComponent{
+  @Input() options: {
+    usageStatistics: boolean;
+    selectionStyle?: {
+      cornerStyle: string;
+      cornerSize: number;
+      cornerColor: string;
+      cornerStrokeColor: string;
+      transparentCorners: boolean;
+      lineWidth: number;
+      borderColor: string;
+      rotatingPointOffset: number;
+    };
+    applyCropSelectionStyle: boolean;
+    applyGroupSelectionStyle: boolean;
+  } = {
+    usageStatistics: false,
+    selectionStyle: {
+      cornerStyle: 'circle',
+      cornerSize: 32,
+      cornerColor: '#fff',
+      cornerStrokeColor: '#fff',
+      transparentCorners: false,
+      lineWidth: 4,
+      borderColor: '#fff',
+      rotatingPointOffset: 500
+    },
+    applyCropSelectionStyle: true,
+    applyGroupSelectionStyle: true,
+  };
+  @Input() initialImage: string | File;
 
-Run `ng test tui-image-editor` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  ...
+  }
+```
