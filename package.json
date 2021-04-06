@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "compile-scss-min-tui-image-editor-angular": "sass projects/tui-image-editor-angular/src/theme.scss projects/tui-image-editor-angular/src/theme.min.css --style=compressed",
+    "build-tui-image-editor-angular": "ng build tui-image-editor-angular",
+    "link-tui-image-editor-angular": "npm link ./dist/tui-image-editor-angular",
+    "build-and-link-tui-image-editor-angular": "npm-run-all build-tui-image-editor-angular link-tui-image-editor-angular"
   },
   "private": true,
   "dependencies": {
@@ -15,14 +19,18 @@
     "@angular/compiler": "~10.1.1",
     "@angular/core": "~10.1.1",
     "@angular/forms": "~10.1.1",
+    "@angular/localize": "~10.1.1",
     "@angular/platform-browser": "~10.1.1",
     "@angular/platform-browser-dynamic": "~10.1.1",
     "@angular/router": "~10.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "bootstrap": "^4.5.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1001.7",
     "@angular/cli": "~10.1.1",
     "@angular/compiler-cli": "~10.1.1",
     "@types/node": "^12.11.1",
@@ -36,9 +44,11 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^10.1.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "typescript": "~4.0.2",
+    "npm-run-all": "4.1.5"
   }
 }
