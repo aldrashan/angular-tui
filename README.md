@@ -1,27 +1,71 @@
-# AngularTui
+# Angular-Tui
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+Based on the UI component of [tui.image-editor](https://github.com/nhn/tui.image-editor).
 
-## Development server
+## 💾 Install
+```sh
+npm install --save tui-image-editor-angular
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Add needed package to NgModule imports:
+```sh
+import { TuiImageEditorModule } from 'tui-image-editor-angular';
 
-## Code scaffolding
+@NgModule({
+  ...
+  imports: [TuiImageEditorModule,...]
+  ...
+})
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Import css:
+```scss
+@import "tui-image-editor-angular/src/theme.scss";
 
-## Build
+...
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 📊 Usage
+```html
+<tui-image-editor></tui-image-editor>
+```
 
-## Running unit tests
+```js
+@Component({
+  selector: 'tui-image-editor'
+})
+export class TuiImageEditorComponent{
+  @Input() options: {
+    usageStatistics: boolean;
+    selectionStyle?: {
+      cornerStyle: string;
+      cornerSize: number;
+      cornerColor: string;
+      cornerStrokeColor: string;
+      transparentCorners: boolean;
+      lineWidth: number;
+      borderColor: string;
+      rotatingPointOffset: number;
+    };
+    applyCropSelectionStyle: boolean;
+    applyGroupSelectionStyle: boolean;
+  } = {
+    usageStatistics: false,
+    selectionStyle: {
+      cornerStyle: 'circle',
+      cornerSize: 32,
+      cornerColor: '#fff',
+      cornerStrokeColor: '#fff',
+      transparentCorners: false,
+      lineWidth: 4,
+      borderColor: '#fff',
+      rotatingPointOffset: 500
+    },
+    applyCropSelectionStyle: true,
+    applyGroupSelectionStyle: true,
+  };
+  @Input() initialImage: string | File;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  ...
+  }
+```
