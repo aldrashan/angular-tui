@@ -1,0 +1,14 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-undo' | translate"
+  [class]="
+    'tie-btn-undo tui-image-editor-item help ' +
+    (undoStackSize != 0 ? 'enabled' : 'disabled')
+  "
+  (click)="undoStackSize != 0 ? undo() : null"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-undo" class="normal use-default"></use>
+    <use xlink:href="#ic-undo" class="disabled use-default"></use>
+    <use xlink:href="#ic-undo" class="hover use-default"></use>
+  </svg>
+</div>

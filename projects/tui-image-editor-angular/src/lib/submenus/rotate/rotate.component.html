@@ -1,0 +1,64 @@
+<div class="tui-image-editor-menu-rotate">
+  <div class="tui-image-editor-submenu-item">
+    <div class="tie-rotate-button tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-justify-content-center tui-image-editor-my-3">
+      <div class="tui-image-editor-button clockwise" (click)="rotateImage(30)">
+        <div>
+          <svg class="svg_ic-submenu">
+            <use
+              xlink:href="#ic-rotate-clockwise"
+              class="normal use-default"
+            ></use>
+            <use
+              xlink:href="#ic-rotate-clockwise"
+              class="active use-default"
+            ></use>
+          </svg>
+        </div>
+        <label> 30° </label>
+      </div>
+      <div
+        class="tui-image-editor-button counterclockwise"
+        (click)="rotateImage(-30)"
+      >
+        <div>
+          <svg class="svg_ic-submenu">
+            <use
+              xlink:href="#ic-rotate-counterclockwise"
+              class="normal use-default"
+            ></use>
+            <use
+              xlink:href="#ic-rotate-counterclockwise"
+              class="active use-default"
+            ></use>
+          </svg>
+        </div>
+        <label> -30° </label>
+      </div>
+    </div>
+    <div
+      class="tui-image-editor-newline tui-image-editor-range-wrap tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-justify-content-center tui-image-editor-my-3"
+    >
+      <label class="range">{{
+        "tui-image-editor-angular-submenus-rotate-slider" | translate
+      }}</label>
+      <input
+        type="range"
+        [(ngModel)]="rotation"
+        (ngModelChange)="rotationChanged($event, true)"
+        (change)="rotationChanged($event, false)"
+        min="-360"
+        max="360"
+      />
+      <input
+        type="number"
+        min="-360"
+        max="360"
+        step="1"
+        class="tie-rotate-range-value tui-image-editor-range-value"
+        [(ngModel)]="rotation"
+        (ngModelChange)="rotationChanged($event, true)"
+        (change)="rotationChanged($event, false)"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-load' | translate"
+  class="tie-btn-load tui-image-editor-item help enabled"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-file-upload" class="normal use-default"></use>
+    <use xlink:href="#ic-file-upload" class="active use-default"></use>
+    <use xlink:href="#ic-file-upload" class="hover use-default"></use>
+  </svg>
+  <input
+    type="file"
+    class="tui-image-editor-load-btn"
+    accept="image/x-png,image/gif,image/jpeg"
+    (change)="onImageChosen($event)"
+  />
+</div>

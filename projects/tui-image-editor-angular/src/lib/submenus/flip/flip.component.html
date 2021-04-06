@@ -1,0 +1,46 @@
+<div class="tui-image-editor-menu-flip">
+  <div
+    class="tie-flip-button tui-image-editor-submenu-item tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-justify-content-center tui-image-editor-my-3"
+  >
+    <div>
+      <div class="tui-image-editor-button flipX" (click)="flipX()">
+        <div>
+          <svg class="svg_ic-submenu">
+            <use xlink:href="#ic-flip-x" class="normal use-default"></use>
+            <use xlink:href="#ic-flip-x" class="active use-default"></use>
+          </svg>
+        </div>
+        <label>
+          {{ "tui-image-editor-angular-submenus-flip-x" | translate }}
+        </label>
+      </div>
+      <div class="tui-image-editor-button flipY" (click)="flipY()">
+        <div>
+          <svg class="svg_ic-submenu">
+            <use xlink:href="#ic-flip-y" class="normal use-default"></use>
+            <use xlink:href="#ic-flip-y" class="active use-default"></use>
+          </svg>
+        </div>
+        <label>
+          {{ "tui-image-editor-angular-submenus-flip-y" | translate }}
+        </label>
+      </div>
+    </div>
+    <div class="tui-image-editor-partition">
+      <div></div>
+    </div>
+    <div>
+      <div class="tui-image-editor-button resetFlip" (click)="resetFlip()">
+        <div>
+          <svg class="svg_ic-submenu">
+            <use xlink:href="#ic-flip-reset" class="normal use-default"></use>
+            <use xlink:href="#ic-flip-reset" class="active use-default"></use>
+          </svg>
+        </div>
+        <label>
+          {{ "tui-image-editor-angular-submenus-flip-reset" | translate }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

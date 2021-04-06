@@ -1,0 +1,42 @@
+<div class="tui-image-editor-menu-mask">
+  <div class="tui-image-editor-submenu-item">
+    <div class="tui-image-editor-d-flex tui-image-editor-justify-content-center tui-image-editor-my-3">
+      <div class="tui-image-editor-button">
+        <div>
+          <input
+            #fileInput
+            type="file"
+            accept="image/*"
+            class="tie-mask-image-file"
+            (change)="onMaskChosen($event)"
+          />
+          <svg class="svg_ic-submenu">
+            <use xlink:href="#ic-mask-load" class="normal use-default"></use>
+            <use xlink:href="#ic-mask-load" class="active use-default"></use>
+          </svg>
+        </div>
+        <label>
+          {{
+            "tui-image-editor-angular-submenus-mask-loadMaskImage" | translate
+          }}
+        </label>
+      </div>
+    </div>
+    <div
+      class="tie-mask-apply tui-image-editor-newline apply tui-image-editor-my-3"
+      (click)="applyMask()"
+    >
+      <div
+        class="tui-image-editor-button apply tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap tui-image-editor-align-items-center tui-image-editor-justify-content-center"
+      >
+        <svg class="svg_ic-menu">
+          <use xlink:href="#ic-apply" class="normal use-default"></use>
+          <use xlink:href="#ic-apply" class="active use-default"></use>
+        </svg>
+        <label>
+          {{ "tui-image-editor-angular-submenus-mask-apply" | translate }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

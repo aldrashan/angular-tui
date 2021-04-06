@@ -1,0 +1,15 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-drag' | translate"
+  [class]="
+    'tie-btn-hand tui-image-editor-item help ' +
+    (imageChosen ? 'enabled ' : 'disabled ') +
+    (isSelected ? 'active ' : '')
+  "
+  (click)="imageChosen ? startDrag() : null"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-hand" class="normal use-default"></use>
+    <use xlink:href="#ic-hand" class="disabled use-default"></use>
+    <use xlink:href="#ic-hand" class="hover use-default"></use>
+  </svg>
+</div>

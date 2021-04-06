@@ -1,0 +1,403 @@
+<div
+  class="tui-image-editor-menu-filter tui-image-editor-d-flex tui-image-editor-justify-content-center"
+>
+  <div
+    class="tui-image-editor-submenu-item tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-overflowable-x tui-image-editor-py-3"
+  >
+    <div class="tui-image-editor-submenu-align">
+      <div
+        class="tui-image-editor-checkbox-wrap fixed-width tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-wrap tui-image-editor-justify-content-center"
+      >
+        <div class="tui-image-editor-checkbox tui-image-editor-align-self-center">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-grayscale"
+              [(ngModel)]="filterGrayscaleChecked"
+              (ngModelChange)="filterGrayscaleCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-grayscale" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-checkbox tui-image-editor-align-self-center">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-invert"
+              [(ngModel)]="filterInvertChecked"
+              (ngModelChange)="filterInvertCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-invert" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-checkbox tui-image-editor-align-self-center">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-sepia"
+              [(ngModel)]="filterSepiaChecked"
+              (ngModelChange)="filterSepiaCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-sepia" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-checkbox tui-image-editor-align-self-center">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-vintage"
+              [(ngModel)]="filterVintageChecked"
+              (ngModelChange)="filterVintageCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-sepia2" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-checkbox tui-image-editor-align-self-center">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-blur"
+              [(ngModel)]="filterBlurChecked"
+              (ngModelChange)="filterBlurCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-blur" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-checkbox tui-image-editor-align-self-center">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-sharpen"
+              [(ngModel)]="filterSharpenChecked"
+              (ngModelChange)="filterSharpenCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-sharpen" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-checkbox tui-image-editor-align-self-center">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-emboss"
+              [(ngModel)]="filterEmbossChecked"
+              (ngModelChange)="filterEmbossCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-emboss" | translate
+            }}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="tui-image-editor-partition">
+      <div></div>
+    </div>
+    <div class="tui-image-editor-submenu-align">
+      <div
+        class="tui-image-editor-checkbox-group tui-image-editor-disabled"
+        style="margin-bottom: 7px"
+      >
+        <div class="tui-image-editor-checkbox-wrap">
+          <div class="tui-image-editor-checkbox">
+            <label
+              class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+            >
+              <input
+                type="checkbox"
+                class="tie-remove-white"
+                [(ngModel)]="filterWhiteRemovalChecked"
+                (ngModelChange)="filterWhiteRemovalCheckedChanged($event)"
+              />
+              <span>{{
+                "tui-image-editor-angular-submenus-filter-removeWhite"
+                  | translate
+              }}</span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="tui-image-editor-newline tui-image-editor-range-wrap short tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap tui-image-editor-align-items-center"
+        >
+          <label>{{
+            "tui-image-editor-angular-submenus-filter-removeWhite-distance"
+              | translate
+          }}</label>
+          <input
+            type="range"
+            [(ngModel)]="filterWhiteRemovalDistance"
+            (ngModelChange)="filterWhiteRemovalDistanceChanged($event, true)"
+            (change)="filterWhiteRemovalDistanceChanged($event, false)"
+            min="0"
+            max="1"
+            step="0.001"
+            [disabled]="filterWhiteRemovalChecked == false"
+          />
+        </div>
+      </div>
+      <div class="tui-image-editor-checkbox-group tui-image-editor-disabled">
+        <div class="tui-image-editor-checkbox">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-brightness"
+              [(ngModel)]="filterBrightnessChecked"
+              (ngModelChange)="filterBrightnessCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-brightness" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-range-wrap short tui-image-editor-d-flex tui-image-editor-flex-row align-items-center tui-image-editor-my-2">
+          <input
+            type="range"
+            [(ngModel)]="filterBrightnessValue"
+            (ngModelChange)="filterBrightnessValueChanged($event, true)"
+            (change)="filterBrightnessValueChanged($event, false)"
+            min="-1"
+            max="1"
+            step="0.03"
+            [disabled]="filterBrightnessChecked == false"
+          />
+        </div>
+      </div>
+      <div class="tui-image-editor-checkbox-group tui-image-editor-disabled">
+        <div class="tui-image-editor-checkbox">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-noise"
+              [(ngModel)]="filterNoiseChecked"
+              (ngModelChange)="filterNoiseCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-noise" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-range-wrap short tui-image-editor-d-flex tui-image-editor-flex-row align-items-center tui-image-editor-my-2">
+          <input
+            type="range"
+            [(ngModel)]="filterNoiseValue"
+            (ngModelChange)="filterNoiseValueChanged($event, true)"
+            (change)="filterNoiseValueChanged($event, false)"
+            min="0"
+            max="1000"
+            step="10"
+            [disabled]="filterNoiseChecked == false"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="tui-image-editor-partition only-left-right">
+      <div></div>
+    </div>
+    <div class="tui-image-editor-submenu-align">
+      <div class="tui-image-editor-checkbox-group tui-image-editor-disabled">
+        <div class="tui-image-editor-checkbox">
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-pixelate"
+              [(ngModel)]="filterPixelateChecked"
+              (ngModelChange)="filterPixelateCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-pixelate" | translate
+            }}</span>
+          </label>
+        </div>
+        <div class="tui-image-editor-range-wrap short tui-image-editor-d-flex tui-image-editor-flex-row align-items-center tui-image-editor-my-2">
+          <input
+            type="range"
+            [(ngModel)]="filterPixelateValue"
+            (ngModelChange)="filterPixelateValueChanged($event, true)"
+            (change)="filterPixelateValueChanged($event, false)"
+            min="2"
+            max="20"
+            step="1"
+            [disabled]="filterPixelateChecked == false"
+          />
+        </div>
+      </div>
+      <div class="tui-image-editor-checkbox-group tui-image-editor-disabled">
+        <div class="tui-image-editor-newline tui-image-editor-checkbox-wrap">
+          <div class="tui-image-editor-checkbox">
+            <label
+              class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+            >
+              <input
+                type="checkbox"
+                class="tie-color-filter"
+                [(ngModel)]="filterColorFilterChecked"
+                (ngModelChange)="filterColorFilterCheckedChanged($event)"
+              />
+              <span>{{
+                "tui-image-editor-angular-submenus-filter-colorFilter"
+                  | translate
+              }}</span>
+            </label>
+          </div>
+        </div>
+        <div class="tui-image-editor-newline tui-image-editor-range-wrap short">
+          <label>{{
+            "tui-image-editor-angular-submenus-filter-colorFilter-threshold"
+              | translate
+          }}</label>
+          <div class="tie-colorfilter-threshold-range tui-image-editor-range tui-image-editor-d-flex tui-image-editor-flex-row align-items-center tui-image-editor-my-2">
+            <input
+              type="range"
+              [(ngModel)]="filterColorFilterThreshold"
+              (ngModelChange)="filterColorFilterThresholdChanged($event, true)"
+              (change)="filterColorFilterThresholdChanged($event, false)"
+              min="0"
+              max="1"
+              step="0.02"
+              [disabled]="filterColorFilterChecked == false"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tui-image-editor-partition">
+      <div></div>
+    </div>
+    <div
+      class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center"
+    >
+      <div class="filter-color-item">
+        <div
+          [class]="
+            'tie-filter-tint-color tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column tui-image-editor-align-items-center ' +
+            (filterTintChecked ? 'active' : '')
+          "
+          [title]="'tui-image-editor-angular-submenus-filter-tint' | translate"
+        >
+          <input
+            readonly
+            class="tie-filter-tint-color-picker tui-image-editor-mb-2"
+            [(colorPicker)]="filterTintColor"
+            [style.background]="filterTintColor"
+            [cpOutputFormat]="'rgba'"
+            [cpPresetColors]="defaultFilterTintColors"
+            (colorPickerChange)="filterTintColorChanged($event)"
+            [cpUseRootViewContainer]="true"
+          />
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-tint"
+              [(ngModel)]="filterTintChecked"
+              (ngModelChange)="filterTintCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-tint" | translate
+            }}</span>
+          </label>
+        </div>
+      </div>
+      <div class="filter-color-item">
+        <div
+          [class]="
+            'tie-filter-multiply-color tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column tui-image-editor-align-items-center ' +
+            (filterMultiplyChecked ? 'active' : '')
+          "
+          [title]="
+            'tui-image-editor-angular-submenus-filter-multiply' | translate
+          "
+        >
+          <input
+            readonly
+            class="tie-filter-multiply-color-picker tui-image-editor-mb-2"
+            [(colorPicker)]="filterMultiplyColor"
+            [style.background]="filterMultiplyColor"
+            [cpOutputFormat]="'hex'"
+            [cpPresetColors]="defaultFilterMultiplyColors"
+            (colorPickerChange)="filterMultiplyColorChanged($event)"
+            [cpUseRootViewContainer]="true"
+          />
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-multiply"
+              [(ngModel)]="filterMultiplyChecked"
+              (ngModelChange)="filterMultiplyCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-multiply" | translate
+            }}</span>
+          </label>
+        </div>
+      </div>
+      <div class="filter-color-item">
+        <div
+          [class]="
+            'tie-filter-blend-color tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column tui-image-editor-align-items-center ' +
+            (filterBlendChecked ? 'active' : '')
+          "
+          [title]="'tui-image-editor-angular-submenus-filter-blend' | translate"
+        >
+          <input
+            readonly
+            class="tie-filter-blend-color-picker tui-image-editor-mb-2"
+            [(colorPicker)]="filterBlendColor"
+            [style.background]="filterBlendColor"
+            [cpOutputFormat]="'rgba'"
+            [cpPresetColors]="defaultFilterBlendColors"
+            (colorPickerChange)="filterBlendColorChanged($event)"
+            [cpUseRootViewContainer]="true"
+          />
+          <label
+            class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-flex-nowrap"
+          >
+            <input
+              type="checkbox"
+              class="tie-blend"
+              [(ngModel)]="filterBlendChecked"
+              (ngModelChange)="filterBlendCheckedChanged($event)"
+            />
+            <span>{{
+              "tui-image-editor-angular-submenus-filter-blend" | translate
+            }}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

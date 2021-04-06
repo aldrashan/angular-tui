@@ -1,0 +1,92 @@
+<div class="tui-image-editor-menu-draw">
+  <div class="tui-image-editor-submenu-item">
+    <div class="tie-draw-line-select-button">
+      <div
+        class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-justify-content-center tui-image-editor-my-3"
+      >
+        <div
+          (click)="setDrawType('free')"
+          [class]="
+            'tui-image-editor-button free ' +
+            (drawType == 'free' ? 'active' : '')
+          "
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-draw-free" class="normal use-default"></use>
+              <use xlink:href="#ic-draw-free" class="active use-default"></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-draw-free" | translate }}
+          </label>
+        </div>
+        <div
+          (click)="setDrawType('line')"
+          [class]="
+            'tui-image-editor-button line ' +
+            (drawType == 'line' ? 'active' : '')
+          "
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-draw-line" class="normal use-default"></use>
+              <use xlink:href="#ic-draw-line" class="active use-default"></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-draw-straight" | translate }}
+          </label>
+        </div>
+        <div class="tui-image-editor-partition">
+          <div></div>
+        </div>
+        <div
+          class="tie-draw-color tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column"
+          title="Color"
+        >
+          <label>
+            <input
+              readonly
+              class="tie-draw-color-picker"
+              [(colorPicker)]="drawStrokeColor"
+              [style.background]="drawStrokeColor"
+              [cpOutputFormat]="'rgba'"
+              [cpPresetColors]="defaultDrawShapeColors"
+              (colorPickerChange)="drawStrokeColorChanged($event)"
+              [cpUseRootViewContainer]="true"
+            />
+            <div>
+              {{ "tui-image-editor-angular-submenus-draw-color" | translate }}
+            </div></label
+          >
+        </div>
+      </div>
+      <div
+        class="tui-image-editor-newline tui-image-editor-range-wrap tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-justify-content-center tui-image-editor-my-3"
+      >
+        <label class="range">{{
+          "tui-image-editor-angular-submenus-draw-strokeWidth" | translate
+        }}</label>
+        <input
+          type="range"
+          [(ngModel)]="drawStrokeWidthValue"
+          (ngModelChange)="drawStrokeWidthChanged($event, true)"
+          (change)="drawStrokeWidthChanged($event, false)"
+          min="5"
+          max="30"
+        />
+        <input
+          type="number"
+          min="5"
+          max="30"
+          step="1"
+          class="tie-draw-range-value tui-image-editor-range-value"
+          [(ngModel)]="drawStrokeWidthValue"
+          (ngModelChange)="drawStrokeWidthChanged($event, true)"
+          (change)="drawStrokeWidthChanged($event, false)"
+        />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div
+  (click)="imageChosen ? clicked.emit('crop') : null"
+  [title]="
+    'tui-image-editor-angular-menus-buttons-crop-tooltip' | translate
+  "
+  [class]="
+    'tie-btn-crop tui-image-editor-item normal ' + (selected ? 'active' : '')
+  "
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-crop" class="normal use-default"></use>
+    <use xlink:href="#ic-crop" class="active use-default"></use>
+    <use xlink:href="#ic-crop" class="hover use-default"></use>
+  </svg>
+</div>

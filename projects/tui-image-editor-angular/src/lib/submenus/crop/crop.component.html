@@ -1,0 +1,155 @@
+<div class="tui-image-editor-menu-crop">
+  <div class="tui-image-editor-submenu-item">
+    <div
+      class="tui-image-editor-d-flex tui-image-editor-justify-content-center"
+    >
+      <div
+        class="tie-crop-preset-button tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap tui-image-editor-align-items-center tui-image-editor-overflowable-x tui-image-editor-py-3"
+      >
+        <div
+          [class]="
+            'tui-image-editor-button preset preset-none ' +
+            (activeCropMode == CROPMODE_PRESET_NONE ? 'active' : '')
+          "
+          (click)="setCropMode(CROPMODE_PRESET_NONE)"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-shape-rectangle"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-shape-rectangle"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-crop-custom" | translate }}
+          </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button preset preset-square ' +
+            (activeCropMode == CROPMODE_PRESET_SQUARE ? 'active' : '')
+          "
+          (click)="setCropMode(CROPMODE_PRESET_SQUARE)"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-crop" class="normal use-default"></use>
+              <use xlink:href="#ic-crop" class="active use-default"></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-crop-square" | translate }}
+          </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button preset preset-3-2 ' +
+            (activeCropMode == CROPMODE_PRESET_3_2 ? 'active' : '')
+          "
+          (click)="setCropMode(CROPMODE_PRESET_3_2)"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-crop" class="normal use-default"></use>
+              <use xlink:href="#ic-crop" class="active use-default"></use>
+            </svg>
+          </div>
+          <label> 3:2 </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button preset preset-4-3 ' +
+            (activeCropMode == CROPMODE_PRESET_4_3 ? 'active' : '')
+          "
+          (click)="setCropMode(CROPMODE_PRESET_4_3)"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-crop" class="normal use-default"></use>
+              <use xlink:href="#ic-crop" class="active use-default"></use>
+            </svg>
+          </div>
+          <label> 4:3 </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button preset preset-5-4 ' +
+            (activeCropMode == CROPMODE_PRESET_5_4 ? 'active' : '')
+          "
+          (click)="setCropMode(CROPMODE_PRESET_5_4)"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-crop" class="normal use-default"></use>
+              <use xlink:href="#ic-crop" class="active use-default"></use>
+            </svg>
+          </div>
+          <label> 5:4 </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button preset preset-7-5 ' +
+            (activeCropMode == CROPMODE_PRESET_7_5 ? 'active' : '')
+          "
+          (click)="setCropMode(CROPMODE_PRESET_7_5)"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-crop" class="normal use-default"></use>
+              <use xlink:href="#ic-crop" class="active use-default"></use>
+            </svg>
+          </div>
+          <label> 7:5 </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button preset preset-16-9 ' +
+            (activeCropMode == CROPMODE_PRESET_16_9 ? 'active' : '')
+          "
+          (click)="setCropMode(CROPMODE_PRESET_16_9)"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-crop" class="normal use-default"></use>
+              <use xlink:href="#ic-crop" class="active use-default"></use>
+            </svg>
+          </div>
+          <label> 16:9 </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tie-crop-button action tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap tui-image-editor-align-items-center tui-image-editor-justify-content-center tui-image-editor-mb-3"
+    >
+      <div
+        class="tui-image-editor-button apply tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center"
+        (click)="applyCrop()"
+      >
+        <svg class="svg_ic-menu">
+          <use xlink:href="#ic-apply" class="normal use-default"></use>
+          <use xlink:href="#ic-apply" class="active use-default"></use>
+        </svg>
+        <label>
+          {{ "tui-image-editor-angular-submenus-crop-apply" | translate }}
+        </label>
+      </div>
+      <div
+        class="tui-image-editor-button cancel tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center"
+        (click)="cancelCrop()"
+      >
+        <svg class="svg_ic-menu">
+          <use xlink:href="#ic-cancel" class="normal use-default"></use>
+          <use xlink:href="#ic-cancel" class="active use-default"></use>
+        </svg>
+        <label>
+          {{ "tui-image-editor-angular-submenus-crop-cancel" | translate }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

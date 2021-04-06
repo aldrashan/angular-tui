@@ -1,0 +1,14 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-delete' | translate"
+  [class]="
+    'tie-btn-delete tui-image-editor-item help ' +
+    (activeObjectId != null ? 'enabled' : '')
+  "
+  (click)="activeObjectId != null ? deleteActiveObject() : null"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-delete" class="normal use-default"></use>
+    <use xlink:href="#ic-delete" class="disabled use-default"></use>
+    <use xlink:href="#ic-delete" class="hover use-default"></use>
+  </svg>
+</div>

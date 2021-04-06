@@ -1,0 +1,13 @@
+<div
+  (click)="imageChosen ? clicked.emit('text') : null"
+  [title]="'tui-image-editor-angular-menus-buttons-text' | translate"
+  [class]="
+    'tie-btn-text tui-image-editor-item normal ' + (selected ? 'active' : '')
+  "
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-text" class="normal use-default"></use>
+    <use xlink:href="#ic-text" class="active use-default"></use>
+    <use xlink:href="#ic-text" class="hover use-default"></use>
+  </svg>
+</div>

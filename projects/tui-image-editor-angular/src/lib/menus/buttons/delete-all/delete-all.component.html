@@ -1,0 +1,14 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-deleteAll' | translate"
+  [class]="
+    'tie-btn-deleteAll tui-image-editor-item help ' +
+    (imageChosen ? 'enabled' : 'disabled')
+  "
+  (click)="deleteAll()"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-delete-all" class="normal use-default"></use>
+    <use xlink:href="#ic-delete-all" class="disabled use-default"></use>
+    <use xlink:href="#ic-delete-all" class="hover use-default"></use>
+  </svg>
+</div>

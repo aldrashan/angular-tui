@@ -1,0 +1,13 @@
+<div
+  (click)="imageChosen ? clicked.emit('flip') : null"
+  [title]="'tui-image-editor-angular-menus-buttons-flip' | translate"
+  [class]="
+    'tie-btn-flip tui-image-editor-item normal ' + (selected ? 'active' : '')
+  "
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-flip" class="normal use-default"></use>
+    <use xlink:href="#ic-flip" class="active use-default"></use>
+    <use xlink:href="#ic-flip" class="hover use-default"></use>
+  </svg>
+</div>

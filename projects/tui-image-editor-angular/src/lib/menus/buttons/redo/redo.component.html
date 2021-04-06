@@ -1,0 +1,14 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-redo' | translate"
+  [class]="
+    'tie-btn-redo tui-image-editor-item help ' +
+    (redoStackSize != 0 ? 'enabled' : 'disabled')
+  "
+  (click)="redoStackSize != 0 ? redo() : null"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-redo" class="normal use-default"></use>
+    <use xlink:href="#ic-redo" class="disabled use-default"></use>
+    <use xlink:href="#ic-redo" class="hover use-default"></use>
+  </svg>
+</div>

@@ -1,0 +1,171 @@
+<div
+  class="tui-image-editor-d-flex tui-image-editor-flex-column tui-image-editor-justify-content-center tui-image-editor-h-100 tui-image-editor-w-100 tui-image-editor-container"
+>
+  <div
+    class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-wrap tui-image-editor-justify-content-center tui-image-editor-align-items-center"
+  >
+    <div
+      class="tui-image-editor-help-menu tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-wrap tui-image-editor-align-items-center tui-image-editor-justify-content-center tui-image-editor-p-1"
+    >
+      <div
+        class="tui-image-editor-help-menu-item tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap"
+      >
+        <tui-image-editor-menus-buttons-load
+          (loadImage)="loadImage($event)"
+        ></tui-image-editor-menus-buttons-load>
+        <tui-image-editor-menus-buttons-download
+          [imageChosen]="imageChosen"
+          [imageEditor]="imageEditor"
+        ></tui-image-editor-menus-buttons-download>
+      </div>
+      <div
+        class="tui-image-editor-help-menu-item tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap"
+      >
+        <tui-image-editor-menus-buttons-zoom-in
+          [imageChosen]="imageChosen"
+          [imageEditor]="imageEditor"
+        ></tui-image-editor-menus-buttons-zoom-in>
+        <tui-image-editor-menus-buttons-zoom-out
+          [imageChosen]="imageChosen"
+          [imageEditor]="imageEditor"
+        ></tui-image-editor-menus-buttons-zoom-out>
+        <tui-image-editor-menus-buttons-drag
+          [imageChosen]="imageChosen"
+          [imageEditor]="imageEditor"
+        ></tui-image-editor-menus-buttons-drag>
+      </div>
+      <div
+        class="tui-image-editor-help-menu-item tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap"
+      >
+        <tui-image-editor-menus-buttons-history
+          [imageEditor]="imageEditor"
+        ></tui-image-editor-menus-buttons-history>
+        <tui-image-editor-menus-buttons-undo
+          [imageEditor]="imageEditor"
+          (cancelCroppingRequested)="exitCropOnAction()"
+        ></tui-image-editor-menus-buttons-undo>
+        <tui-image-editor-menus-buttons-redo
+          [imageEditor]="imageEditor"
+          (cancelCroppingRequested)="exitCropOnAction()"
+        ></tui-image-editor-menus-buttons-redo>
+        <tui-image-editor-menus-buttons-reset
+          [imageChosen]="imageChosen"
+          [imageEditor]="imageEditor"
+          (cancelCroppingRequested)="exitCropOnAction()"
+          (resetImage)="resetImage()"
+        ></tui-image-editor-menus-buttons-reset>
+      </div>
+      <div
+        class="tui-image-editor-help-menu-item tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap"
+      >
+        <tui-image-editor-menus-buttons-delete
+          [imageChosen]="imageChosen"
+          [imageEditor]="imageEditor"
+          (cancelCroppingRequested)="exitCropOnAction()"
+        ></tui-image-editor-menus-buttons-delete>
+        <tui-image-editor-menus-buttons-delete-all
+          [imageChosen]="imageChosen"
+          [imageEditor]="imageEditor"
+          (cancelCroppingRequested)="exitCropOnAction()"
+        ></tui-image-editor-menus-buttons-delete-all>
+      </div>
+    </div>
+  </div>
+  <div
+    #imageContainer
+    class="tui-image-editor-flex-grow-1 tui-image-editor-d-flex tui-image-editor-align-items-center tui-image-editor-justify-content-center"
+    [style.height]="'0'"
+  ></div>
+  <div class="tui-image-editor-submenu" *ngIf="submenu != null">
+    <tui-image-editor-submenus-crop
+      *ngIf="submenu == 'crop'"
+      [imageEditor]="imageEditor"
+      (cancelCroppingRequested)="exitCropOnAction()"
+    ></tui-image-editor-submenus-crop>
+    <tui-image-editor-submenus-flip
+      *ngIf="submenu == 'flip'"
+      [imageEditor]="imageEditor"
+    ></tui-image-editor-submenus-flip>
+    <tui-image-editor-submenus-rotate
+      *ngIf="submenu == 'rotate'"
+      [imageEditor]="imageEditor"
+      [(rotation)]="rotation"
+    ></tui-image-editor-submenus-rotate>
+    <tui-image-editor-submenus-draw
+      *ngIf="submenu == 'draw'"
+      [imageEditor]="imageEditor"
+    ></tui-image-editor-submenus-draw>
+    <tui-image-editor-submenus-shape
+      *ngIf="submenu == 'shape'"
+      [imageEditor]="imageEditor"
+    ></tui-image-editor-submenus-shape>
+    <tui-image-editor-submenus-icon
+      *ngIf="submenu == 'icon'"
+      [imageEditor]="imageEditor"
+    ></tui-image-editor-submenus-icon>
+    <tui-image-editor-submenus-text
+      *ngIf="submenu == 'text'"
+      [imageEditor]="imageEditor"
+    ></tui-image-editor-submenus-text>
+    <tui-image-editor-submenus-mask
+      *ngIf="submenu == 'mask'"
+      [imageEditor]="imageEditor"
+    ></tui-image-editor-submenus-mask>
+    <tui-image-editor-submenus-filter
+      *ngIf="submenu == 'filter'"
+      [imageEditor]="imageEditor"
+    ></tui-image-editor-submenus-filter>
+  </div>
+  <div class="tui-image-editor-controls tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-justify-content-center">
+    <div
+      class="tui-image-editor-menu tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap tui-image-editor-align-items-center"
+    >
+      <tui-image-editor-menus-buttons-crop
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'crop'"
+        (clicked)="submenu == 'crop' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-crop>
+      <tui-image-editor-menus-buttons-flip
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'flip'"
+        (clicked)="submenu == 'flip' ? hideMenu($event) : showMenu($event)"
+      >
+      </tui-image-editor-menus-buttons-flip>
+      <tui-image-editor-menus-buttons-rotate
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'rotate'"
+        (clicked)="submenu == 'rotate' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-rotate>
+      <tui-image-editor-menus-buttons-draw
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'draw'"
+        (clicked)="submenu == 'draw' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-draw>
+      <tui-image-editor-menus-buttons-shape
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'shape'"
+        (clicked)="submenu == 'shape' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-shape>
+      <tui-image-editor-menus-buttons-icon
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'icon'"
+        (clicked)="submenu == 'icon' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-icon>
+      <tui-image-editor-menus-buttons-text
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'text'"
+        (clicked)="submenu == 'text' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-text>
+      <tui-image-editor-menus-buttons-mask
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'mask'"
+        (clicked)="submenu == 'mask' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-mask>
+      <tui-image-editor-menus-buttons-filter
+        [imageChosen]="imageChosen"
+        [selected]="submenu == 'filter'"
+        (clicked)="submenu == 'filter' ? hideMenu($event) : showMenu($event)"
+      ></tui-image-editor-menus-buttons-filter>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,261 @@
+<div class="tui-image-editor-menu-icon">
+  <div
+    class="tui-image-editor-submenu-item tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-justify-content-center tui-image-editor-flex-nowrap"
+  >
+    <div class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap tui-image-editor-overflowable-x tui-image-editor-py-3">
+      <div class="tie-icon-add-button tui-image-editor-d-flex tui-image-editor-flex-row">
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-arrow' ? 'active' : '')
+          "
+          data-icontype="icon-arrow"
+          (click)="setActiveIconType('icon-arrow')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-icon-arrow" class="normal use-default"></use>
+              <use xlink:href="#ic-icon-arrow" class="active use-default"></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-arrow1" | translate }}
+          </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-arrow-2' ? 'active' : '')
+          "
+          data-icontype="icon-arrow-2"
+          (click)="setActiveIconType('icon-arrow-2')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-icon-arrow-2"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-icon-arrow-2"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-arrow2" | translate }}
+          </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-arrow-3' ? 'active' : '')
+          "
+          data-icontype="icon-arrow-3"
+          (click)="setActiveIconType('icon-arrow-3')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-icon-arrow-3"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-icon-arrow-3"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-arrow3" | translate }}
+          </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-star' ? 'active' : '')
+          "
+          data-icontype="icon-star"
+          (click)="setActiveIconType('icon-star')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-icon-star" class="normal use-default"></use>
+              <use xlink:href="#ic-icon-star" class="active use-default"></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-star1" | translate }}
+          </label>
+        </div>
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-star-2' ? 'active' : '')
+          "
+          data-icontype="icon-star-2"
+          (click)="setActiveIconType('icon-star-2')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-icon-star-2"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-icon-star-2"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-star2" | translate }}
+          </label>
+        </div>
+
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-polygon' ? 'active' : '')
+          "
+          data-icontype="icon-polygon"
+          (click)="setActiveIconType('icon-polygon')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-icon-polygon"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-icon-polygon"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-polygon" | translate }}
+          </label>
+        </div>
+
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-location' ? 'active' : '')
+          "
+          data-icontype="icon-location"
+          (click)="setActiveIconType('icon-location')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-icon-location"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-icon-location"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-location" | translate }}
+          </label>
+        </div>
+
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-heart' ? 'active' : '')
+          "
+          data-icontype="icon-heart"
+          (click)="setActiveIconType('icon-heart')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-icon-heart" class="normal use-default"></use>
+              <use xlink:href="#ic-icon-heart" class="active use-default"></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-heart" | translate }}
+          </label>
+        </div>
+
+        <div
+          [class]="
+            'tui-image-editor-button ' +
+            (iconType == 'icon-bubble' ? 'active' : '')
+          "
+          data-icontype="icon-bubble"
+          (click)="setActiveIconType('icon-bubble')"
+        >
+          <div>
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-icon-bubble"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-icon-bubble"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <label>
+            {{ "tui-image-editor-angular-submenus-icon-bubble" | translate }}
+          </label>
+        </div>
+      </div>
+      <div class="tui-image-editor-partition">
+        <div></div>
+      </div>
+      <div class="tie-icon-add-button">
+        <div class="tui-image-editor-button" style="margin: 0">
+          <div>
+            <input
+              type="file"
+              accept="image/*"
+              class="tie-icon-image-file"
+              (change)="onIconChosen($event)"
+            />
+            <svg class="svg_ic-submenu">
+              <use xlink:href="#ic-icon-load" class="normal use-default"></use>
+              <use xlink:href="#ic-icon-load" class="active use-default"></use>
+            </svg>
+          </div>
+          <label>
+            {{
+              "tui-image-editor-angular-submenus-icon-customIcon" | translate
+            }}
+          </label>
+        </div>
+      </div>
+      <div class="tui-image-editor-partition">
+        <div></div>
+      </div>
+      <div>
+        <div
+          class="tie-icon-color tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column"
+          title="Color"
+        >
+          <label>
+            <input
+              readonly
+              class="tie-icon-color-picker"
+              [(colorPicker)]="iconColor"
+              [style.background]="iconColor"
+              [cpOutputFormat]="'rgba'"
+              [cpPresetColors]="defaultIconColors"
+              (colorPickerChange)="iconColorChanged($event)"
+              [cpUseRootViewContainer]="true"
+            />
+            <div>
+              {{ "tui-image-editor-angular-submenus-icon-color" | translate }}
+            </div></label
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

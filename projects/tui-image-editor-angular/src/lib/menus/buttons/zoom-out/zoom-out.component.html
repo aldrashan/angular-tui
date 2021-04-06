@@ -1,0 +1,14 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-zoomOut' | translate"
+  [class]="
+    'tie-btn-zoomOut tui-image-editor-item help ' +
+    (imageChosen ? 'enabled ' : 'disabled ')
+  "
+  (click)="imageChosen ? zoomOut() : null"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-zoom-out" class="normal use-default"></use>
+    <use xlink:href="#ic-zoom-out" class="disabled use-default"></use>
+    <use xlink:href="#ic-zoom-out" class="hover use-default"></use>
+  </svg>
+</div>

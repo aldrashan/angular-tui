@@ -1,0 +1,155 @@
+<div class="tui-image-editor-menu-shape">
+  <div class="tui-image-editor-submenu-item">
+    <div class="tui-image-editor-d-flex tui-image-editor-justify-content-center">
+      <div class="tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-align-items-center tui-image-editor-overflowable-x tui-image-editor-py-3">
+        <div class="tie-shape-button">
+          <div
+            [class]="
+              'tui-image-editor-button rect ' +
+              (shapeType == 'rect' ? 'active' : '')
+            "
+            (click)="setShapeType('rect')"
+          >
+            <div>
+              <svg class="svg_ic-submenu">
+                <use
+                  xlink:href="#ic-shape-rectangle"
+                  class="normal use-default"
+                ></use>
+                <use
+                  xlink:href="#ic-shape-rectangle"
+                  class="active use-default"
+                ></use>
+              </svg>
+            </div>
+            <label>
+              {{
+                "tui-image-editor-angular-submenus-shape-rectangle" | translate
+              }}
+            </label>
+          </div>
+          <div
+            [class]="
+              'tui-image-editor-button circle ' +
+              (shapeType == 'circle' ? 'active' : '')
+            "
+            (click)="setShapeType('circle')"
+          >
+            <div>
+              <svg class="svg_ic-submenu">
+                <use
+                  xlink:href="#ic-shape-circle"
+                  class="normal use-default"
+                ></use>
+                <use
+                  xlink:href="#ic-shape-circle"
+                  class="active use-default"
+                ></use>
+              </svg>
+            </div>
+            <label>
+              {{ "tui-image-editor-angular-submenus-shape-circle" | translate }}
+            </label>
+          </div>
+          <div
+            [class]="
+              'tui-image-editor-button triangle ' +
+              (shapeType == 'triangle' ? 'active' : '')
+            "
+            (click)="setShapeType('triangle')"
+          >
+            <div>
+              <svg class="svg_ic-submenu">
+                <use
+                  xlink:href="#ic-shape-triangle"
+                  class="normal use-default"
+                ></use>
+                <use
+                  xlink:href="#ic-shape-triangle"
+                  class="active use-default"
+                ></use>
+              </svg>
+            </div>
+            <label>
+              {{
+                "tui-image-editor-angular-submenus-shape-triangle" | translate
+              }}
+            </label>
+          </div>
+        </div>
+        <div class="tui-image-editor-partition">
+          <div></div>
+        </div>
+        <div class="tie-shape-color-button tui-image-editor-d-flex tui-image-editor-flex-row">
+          <div
+            class="tie-color-fill tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column"
+            title="Fill"
+          >
+            <label>
+              <input
+                readonly
+                class="tie-draw-color-picker"
+                [(colorPicker)]="shapeFillColor"
+                [style.background]="shapeFillColor"
+                [cpOutputFormat]="'rgba'"
+                [cpPresetColors]="defaultShapeFillColors"
+                (colorPickerChange)="shapeColorChanged('fill', $event)"
+                [cpUseRootViewContainer]="true"
+              />
+              <div>
+                {{ "tui-image-editor-angular-submenus-shape-fill" | translate }}
+              </div></label
+            >
+          </div>
+          <div
+            class="tie-color-stroke tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column"
+            title="Stroke"
+          >
+            <label>
+              <input
+                readonly
+                class="tie-draw-color-picker"
+                [(colorPicker)]="shapeStrokeColor"
+                [style.background]="shapeStrokeColor"
+                [cpOutputFormat]="'rgba'"
+                [cpPresetColors]="defaultShapeStrokeColors"
+                (colorPickerChange)="shapeColorChanged('stroke', $event)"
+                [cpUseRootViewContainer]="true"
+              />
+              <div>
+                {{
+                  "tui-image-editor-angular-submenus-shape-stroke" | translate
+                }}
+              </div></label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tui-image-editor-newline tui-image-editor-range-wrap tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-justify-content-center tui-image-editor-align-items-center tui-image-editor-mb-3"
+    >
+      <label class="range">{{
+        "tui-image-editor-angular-submenus-shape-strokeWidth" | translate
+      }}</label>
+      <input
+        type="range"
+        [(ngModel)]="shapeStrokeWidthValue"
+        (ngModelChange)="shapeStrokeWidthChanged($event, true)"
+        (change)="shapeStrokeWidthChanged($event, false)"
+        min="2"
+        max="300"
+      />
+      <input
+        type="number"
+        min="2"
+        max="300"
+        step="1"
+        class="tie-draw-range-value tui-image-editor-range-value"
+        [(ngModel)]="shapeStrokeWidthValue"
+        (ngModelChange)="shapeStrokeWidthChanged($event, true)"
+        (change)="shapeStrokeWidthChanged($event, false)"
+      />
+    </div>
+  </div>
+</div>

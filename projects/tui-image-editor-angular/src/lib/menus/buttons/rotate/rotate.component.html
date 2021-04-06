@@ -1,0 +1,14 @@
+<div
+  (click)="imageChosen ? clicked.emit('rotate') : null"
+  [title]="'tui-image-editor-angular-menus-buttons-rotate' | translate"
+  [class]="
+    'tie-btn-rotate tui-image-editor-item normal ' +
+    (selected ? 'active' : '')
+  "
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-rotate" class="normal use-default"></use>
+    <use xlink:href="#ic-rotate" class="active use-default"></use>
+    <use xlink:href="#ic-rotate" class="hover use-default"></use>
+  </svg>
+</div>

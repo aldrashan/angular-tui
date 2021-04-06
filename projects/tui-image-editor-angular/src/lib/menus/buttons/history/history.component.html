@@ -1,0 +1,179 @@
+<div
+  [ngbPopover]="popupContent"
+  popoverClass="tie-history-popover"
+  autoClose="outside"
+  container="body"
+  class="tie-btn-history tui-image-editor-item help enabled"
+>
+  <div
+    [title]="'tui-image-editor-angular-menus-buttons-history' | translate"
+    class="tui-image-editor-d-flex tui-image-editor-align-items-center"
+  >
+    <svg class="svg_ic-menu tui-image-editor-d-flex">
+      <use xlink:href="#ic-history" class="normal use-default"></use>
+      <use xlink:href="#ic-history" class="disabled use-default"></use>
+      <use xlink:href="#ic-history" class="hover use-default"></use>
+    </svg>
+  </div>
+</div>
+
+<ng-template #popupContent>
+  <div class="tie-panel-history">
+    <ul class="history-list" *ngIf="items.length > 0">
+      <li
+        [class]="
+          'history-item ' +
+          (itemNr > historyIndex ? 'disabled-item' : '') +
+          (itemNr == historyIndex ? 'selected-item' : '')
+        "
+        *ngFor="let item of items; index as itemNr"
+      >
+        <div
+          class="tui-image-editor-history-item history tui-image-editor-d-flex tui-image-editor-flex-row tui-image-editor-flex-nowrap tui-image-editor-align-items-center"
+          (click)="onclickHistoryItem(itemNr)"
+        >
+          <div
+            class="history-item-icon tui-image-editor-d-flex tui-image-editor-align-items-center"
+          >
+            <svg *ngIf="item.type == 8" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-load"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-load"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 5" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-draw"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-draw"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 6" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-rotate"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-rotate"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 4" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-crop"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-crop"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 7" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-flip"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-flip"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 2" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-text"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-text"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg
+              *ngIf="item.type == 3 || item.type == 10"
+              class="svg_ic-submenu"
+            >
+              <use
+                xlink:href="#ic-history-mask"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-mask"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 0" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-shape"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-shape"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 1" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-icon"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-icon"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg
+              *ngIf="item.type == 11 || item.type == 12"
+              class="svg_ic-submenu"
+            >
+              <use
+                xlink:href="#ic-history-filter"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-filter"
+                class="active use-default"
+              ></use>
+            </svg>
+            <svg *ngIf="item.type == 9" class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-delete"
+                class="normal use-default"
+              ></use>
+              <use
+                xlink:href="#ic-history-delete"
+                class="active use-default"
+              ></use>
+            </svg>
+          </div>
+          <div class="history-item-text">
+            <div>{{ item.name }}</div>
+            <div class="history-item-text-details" *ngIf="item.detail">
+              {{ item.detail }}
+            </div>
+          </div>
+          <div
+            *ngIf="itemNr == historyIndex"
+            class="history-item-checkbox tui-image-editor-d-flex tui-image-editor-align-items-center"
+          >
+            <svg class="svg_ic-submenu">
+              <use
+                xlink:href="#ic-history-check"
+                class="normal use-default"
+              ></use>
+            </svg>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="items.length === 0" class="tui-image-editor-px-2">
+      {{ "tui-image-editor-angular-history-noItems" | translate }}
+    </div>
+  </div>
+</ng-template>

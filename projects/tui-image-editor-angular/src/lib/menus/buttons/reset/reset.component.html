@@ -1,0 +1,14 @@
+<div
+  [title]="'tui-image-editor-angular-menus-buttons-reset' | translate"
+  [class]="
+    'tie-btn-reset tui-image-editor-item help ' +
+    (imageChosen ? 'enabled' : 'disabled')
+  "
+  (click)="imageChosen ? reset() : null"
+>
+  <svg class="svg_ic-menu">
+    <use xlink:href="#ic-reset" class="normal use-default"></use>
+    <use xlink:href="#ic-reset" class="disabled use-default"></use>
+    <use xlink:href="#ic-reset" class="hover use-default"></use>
+  </svg>
+</div>
