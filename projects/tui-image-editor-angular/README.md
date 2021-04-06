@@ -26,6 +26,14 @@ Import css:
 ```
 
 ## 📊 Usage
+Place the following component somewhere on the page.  
+It only needs to be defined once, for example inside your app.component.html file.
+
+```html
+<tui-image-editor-svg-definitions></tui-image-editor-svg-definitions>
+```
+
+You should then be able to use the image editor component inside any component.
 ```html
 <tui-image-editor></tui-image-editor>
 ```
@@ -69,3 +77,50 @@ export class TuiImageEditorComponent{
   ...
   }
 ```
+
+## Dependencies
+This library currently depends on the following libraries:
+- [@ng-bootstrap/ng-bootstrap](https://ng-bootstrap.github.io/) for the [popover](https://ng-bootstrap.github.io/#/components/popover/examples) component.
+- [ngx-color-picker](https://www.npmjs.com/package/ngx-color-picker) for choosing the colors of certain elements.
+- [tui-image-editor](https://www.npmjs.com/package/tui-image-editor)
+
+## Translations
+Currently, I've only supplied English and Dutch translations.  
+You can however supply your own translations, or override mine like so:
+
+```js
+import { TranslationService } from 'tui-image-editor-angular';
+import { fr } from './i18n/fr';
+import { de } from './i18n/de';
+
+
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {
+    private availableLanguages = { fr, de };
+
+    constructor(private translateService: TranslationService) {
+        Object.keys(this.availableLanguages).forEach((language) => {
+            translateService.loadCustomMessages(language, this.availableLanguages[language]);
+        });
+    }
+
+    ...
+}
+```
+
+fr.ts file example:
+
+```js
+export const fr = {
+  'tui-image-editor-angular-menus-buttons-crop-tooltip': 'Recadrer',
+  'tui-image-editor-angular-menus-buttons-delete': 'Supprimer',
+  'tui-image-editor-angular-menus-buttons-deleteAll': 'Tout supprimer'
+  ...
+}
+```
+
+Take a look at my [en.ts](src/lib/i18n/en.ts) file to see which strings you can/should use/override.
