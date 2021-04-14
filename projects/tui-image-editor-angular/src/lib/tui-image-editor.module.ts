@@ -81,4 +81,11 @@ import { TranslationService } from './i18n/translation.service';
   exports: [TuiImageEditorComponent, SvgDefinitionsComponent],
   providers: [TranslationService],
 })
-export class TuiImageEditorModule {}
+export class TuiImageEditorModule {
+  static forRoot() {
+    return {
+      ngModule: TuiImageEditorModule,
+      providers: [],
+    };
+  }
+}

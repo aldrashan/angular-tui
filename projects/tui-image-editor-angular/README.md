@@ -3,6 +3,8 @@
 Based on the UI component of [tui.image-editor](https://github.com/nhn/tui.image-editor).
 
 ## 💾 Install
+*Note: this library currently only works with Angular 11.2.0*  
+
 ```sh
 npm install --save tui-image-editor-angular
 ```

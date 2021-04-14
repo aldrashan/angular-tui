@@ -128,6 +128,10 @@
 .tui-image-editor-container {
   background-color: #282828;
 
+  label {
+    margin-bottom: 0 !important;
+  }
+
   > div:first-child {
     background-color: #151515;
   }
@@ -771,7 +775,7 @@
   position: absolute;
   top: 0;
   left: 0 /* rtl:ignore */;
-  z-index: 1070;
+  z-index: 10070;
   display: block;
   max-width: 276px;
   font-family: var(--bs-font-sans-serif);
