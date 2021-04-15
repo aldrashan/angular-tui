@@ -159,6 +159,7 @@ export function clearSelection(imageEditor: any, fire_event: boolean = true) {
   imageEditor.discardSelection();
   if (fire_event) {
     imageEditor.fire(eventNames.OBJECT_ACTIVATED, null);
+    imageEditor.fire(eventNames.SELECTION_CLEARED, null);    
   }
 }
 

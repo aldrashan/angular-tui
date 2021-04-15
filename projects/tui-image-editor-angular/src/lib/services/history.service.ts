@@ -48,7 +48,7 @@ export class HistoryService {
   }
 
   public add(command: string | Command, imageEditor: any) {
-    console.log(command);
+    console.debug(command);
 
     if (typeof command === 'string' && command === historyNames.LOAD_IMAGE) {
       this.deleteListItemElement(0, this.listLength);

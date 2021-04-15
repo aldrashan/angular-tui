@@ -64,7 +64,7 @@ export class TuiImageEditorComponent
       transparentCorners: false,
       lineWidth: 4,
       borderColor: '#fff',
-      rotatingPointOffset: 500
+      rotatingPointOffset: 500,
     },
     applyCropSelectionStyle: true,
     applyGroupSelectionStyle: true,
@@ -122,7 +122,7 @@ export class TuiImageEditorComponent
       this.imageContainer.nativeElement,
       this.options
     );
-    console.log(this.imageEditor);
+    console.debug(this.imageEditor);
 
     this.imageEditor.registerIcons(defaultIconPath);
 
@@ -149,23 +149,25 @@ export class TuiImageEditorComponent
   }
 
   destroyImageEditor() {
-    this.imageEditor?.off(
-      eventNames.OBJECT_ACTIVATED,
-      this.onObjectActivatedEventListener
-    );
-    this.imageEditor._invoker.off(
-      eventNames.EXECUTE_COMMAND,
-      this.onExecuteCommandEventListener
-    );
-    this.imageEditor._invoker.off(
-      eventNames.AFTER_UNDO,
-      this.onAfterUndoEventListener
-    );
-    this.imageEditor._invoker.off(
-      eventNames.AFTER_REDO,
-      this.onAfterRedoEventListener
-    );
-    this.imageEditor?.destroy();
+    if (this.imageEditor != null) {
+      this.imageEditor.off(
+        eventNames.OBJECT_ACTIVATED,
+        this.onObjectActivatedEventListener
+      );
+      this.imageEditor._invoker.off(
+        eventNames.EXECUTE_COMMAND,
+        this.onExecuteCommandEventListener
+      );
+      this.imageEditor._invoker.off(
+        eventNames.AFTER_UNDO,
+        this.onAfterUndoEventListener
+      );
+      this.imageEditor._invoker.off(
+        eventNames.AFTER_REDO,
+        this.onAfterRedoEventListener
+      );
+      this.imageEditor.destroy();
+    }
   }
 
   ngAfterViewInit(): void {
@@ -193,7 +195,7 @@ export class TuiImageEditorComponent
   }
 
   private onObjectActivated(props) {
-    console.log(props);
+    console.debug(props);
     this.activeObjectId = props?.id;
     if (props?.id != null) {
       if (

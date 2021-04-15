@@ -69,7 +69,7 @@ export class FilterComponent implements OnInit, OnDestroy {
   }
 
   public rebindFields(items: HistoryItem[]) {
-    console.log(items);
+    console.debug(items);
     if (this.imageEditor != null) {
       this.filterBlurChecked = this.imageEditor.hasFilter('blur');
       this.filterBrightnessChecked = this.imageEditor.hasFilter('brightness');

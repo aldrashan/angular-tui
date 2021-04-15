@@ -448,7 +448,7 @@ export class HistoryItem {
           if (command.args?.length >= 3) {
             let objectId = command.args[1];
             var props = imageEditor?.getObjectProperties(objectId, ['type']);
-            console.log(props);
+            console.debug(props);
             if (props?.type) {
               if (
                 [objectTypes.line, objectTypes.straightLine].indexOf(
