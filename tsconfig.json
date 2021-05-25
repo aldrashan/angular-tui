@@ -18,8 +18,7 @@
     ],
     "paths": {
       "tui-image-editor-angular": [
-        "dist/tui-image-editor-angular/tui-image-editor-angular",
-        "dist/tui-image-editor-angular"
+        "./dist/tui-image-editor-angular"
       ]
     }
   }

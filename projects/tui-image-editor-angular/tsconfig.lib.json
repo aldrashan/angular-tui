@@ -7,6 +7,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
+    "experimentalDecorators": true,
     "types": ["node"],
     "lib": ["dom", "es2018"],
     "paths": { "@/*": ["./node_modules/tui-image-editor/src/js/*"] }

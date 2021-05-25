@@ -37,6 +37,8 @@ import { FilterComponent } from './menus/buttons/filter/filter.component';
 import { FilterComponent as SubmenusFilterComponent } from './submenus/filter/filter.component';
 import { TranslationService } from './i18n/translation.service';
 
+export const translateModule = TranslateModule.forRoot();
+
 @NgModule({
   declarations: [
     TuiImageEditorComponent,
@@ -74,7 +76,7 @@ import { TranslationService } from './i18n/translation.service';
   imports: [
     CommonModule,
     FormsModule,
-    TranslateModule.forRoot(),
+    translateModule,
     ColorPickerModule,
     NgbPopoverModule,
   ],

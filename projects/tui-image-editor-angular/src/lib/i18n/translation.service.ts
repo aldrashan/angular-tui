@@ -12,7 +12,7 @@ export class TranslationService {
         return this.document.defaultView;
     }
 
-    constructor(@Inject(DOCUMENT) readonly document: Document, public service: TranslateService) {
+    constructor(@Inject(DOCUMENT) readonly document: any, public service: TranslateService) {
         Object.keys(this.availableLanguages).forEach((language) => {
             this.service.setTranslation(language, this.availableLanguages[language], true);
         });
