@@ -173,6 +173,10 @@
     .active svg > use.active {
       display: block;
     }
+
+    > .tui-image-editor-menu {
+      font-size: 16px;
+    }
   }
 
   .tui-image-editor-menu .tui-image-editor-item.active,
@@ -258,8 +262,8 @@
     position: relative;
     display: flex;
     border-radius: 2px;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
     cursor: pointer;
