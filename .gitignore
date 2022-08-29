@@ -11,6 +11,9 @@
 /node_modules
 /projects/tui-image-editor-angular/node_modules
 
+# angular
+/.angular
+
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json

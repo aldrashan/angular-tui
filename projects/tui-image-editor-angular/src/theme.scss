@@ -572,6 +572,18 @@
   font-size: 11px;
   margin: 0 9px 0 9px;
   text-align: center;
+
+  &.tui-image-editor-button-color-picker {
+    position: unset;
+
+    color-picker {
+      .cp-preset-colors-class {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
 }
 
 .tui-image-editor-container .tui-image-editor-submenu svg > use {

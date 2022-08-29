@@ -30,7 +30,8 @@ import {
   isFileApiSupported,
   isSilentCommand,
 } from './utils';
-const ImageEditor = require('tui-image-editor');
+// const ImageEditor = require('tui-image-editor');
+import ImageEditor from 'tui-image-editor';
 
 @Component({
   selector: 'tui-image-editor',
@@ -38,7 +39,8 @@ const ImageEditor = require('tui-image-editor');
   providers: [HistoryService],
 })
 export class TuiImageEditorComponent
-  implements OnInit, OnChanges, AfterViewInit, OnDestroy {
+  implements OnInit, OnChanges, AfterViewInit, OnDestroy
+{
   @ViewChild('imageContainer') imageContainer: ElementRef;
   @Input() options: {
     usageStatistics: boolean;
@@ -100,9 +102,10 @@ export class TuiImageEditorComponent
   }
 
   ngOnInit(): void {
-    this.historyServiceSubscription = this.historyService.onChangeEmitter.subscribe(
-      (items) => this.onActiveHistoryElementChanged(items)
-    );
+    this.historyServiceSubscription =
+      this.historyService.onChangeEmitter.subscribe((items) =>
+        this.onActiveHistoryElementChanged(items)
+      );
   }
 
   ngOnChanges(changes: SimpleChanges): void {

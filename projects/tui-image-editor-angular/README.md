@@ -3,7 +3,9 @@
 Based on the UI component of [tui.image-editor](https://github.com/nhn/tui.image-editor).
 
 ## 💾 Install
-*Note: this library currently only works with Angular 11.2.0*  
+*Note: this library only worked with Angular 11.2.0 up to version 0.0.15*
+<br>
+*Starting from Angular 14 we follow standard Angular version numbering, i.e. library version Y.x.x targets Angular Y.*  
 
 ```sh
 npm install --save tui-image-editor-angular
@@ -34,6 +36,31 @@ It only needs to be defined once, for example inside your app.component.html fil
 ```html
 <tui-image-editor-svg-definitions></tui-image-editor-svg-definitions>
 ```
+
+<hr>
+
+[ngx-color-picker](https://github.com/zefoy/ngx-color-picker) requires exposing a ViewContainerRef so it can calculate the area/page's width/height correctly where it can/will be displayed.<br>*Note that if you don't do this, it'll still work, but the color-picker dialog may end up outside of your page's bounds.* 
+
+```
+[cpUseRootViewContainer]     // Create dialog component in the root view container (false).
+                             // Note: The root component needs to have public viewContainerRef.
+```
+
+This can be done like the documentation says by adding a public ViewContainerRef to your app's root component like so.
+
+```
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  constructor(public vcRef: ViewContainerRef) {
+  }
+}
+```
+
+<hr>
 
 You should then be able to use the image editor component inside any component.
 ```html

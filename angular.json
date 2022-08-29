@@ -47,5 +47,8 @@
       }
     }
   },
-  "defaultProject": "tui-image-editor-angular"
+  "defaultProject": "tui-image-editor-angular",
+  "cli": {
+    "analytics": false
+  }
 }

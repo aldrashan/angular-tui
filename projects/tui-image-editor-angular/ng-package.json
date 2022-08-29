@@ -4,22 +4,16 @@
   "deleteDestPath": false,
   "assets": ["**/checkboxes.scss", "**/theme.scss"],
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdModuleIds": {
-      "@ng-bootstrap/ng-bootstrap": "@ng-bootstrap/ng-bootstrap",
-      "ngx-color-picker": "ngx-color-picker",
-      "tui-image-editor/src/js/helper/imagetracer": "tui-image-editor/src/js/helper/imagetracer",
-      "@ngx-translate/core": "@ngx-translate/core",
-      "fabric": "fabric"
-    }
+    "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "tslib",
     "@ng-bootstrap/ng-bootstrap",
     "bootstrap",
     "ngx-color-picker",
     "tui-image-editor",
     "@ngx-translate/core",
-    "fabric"
+    "fabric",
+    "@popperjs/core"
   ]
 }

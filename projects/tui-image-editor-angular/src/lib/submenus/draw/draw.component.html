@@ -42,19 +42,19 @@
           <div></div>
         </div>
         <div
-          class="tie-draw-color tui-image-editor-button tui-image-editor-d-flex tui-image-editor-flex-column"
+          class="tie-draw-color tui-image-editor-button tui-image-editor-button-color-picker tui-image-editor-d-flex tui-image-editor-flex-column"
           title="Color"
         >
           <label>
             <input
               readonly
               class="tie-draw-color-picker"
-              [(colorPicker)]="drawStrokeColor"
               [style.background]="drawStrokeColor"
+              [(colorPicker)]="drawStrokeColor"
               [cpOutputFormat]="'rgba'"
               [cpPresetColors]="defaultDrawShapeColors"
-              (colorPickerChange)="drawStrokeColorChanged($event)"
               [cpUseRootViewContainer]="true"
+              (colorPickerChange)="drawStrokeColorChanged($event)"
             />
             <div>
               {{ "tui-image-editor-angular-submenus-draw-color" | translate }}

@@ -12,14 +12,10 @@
     "types": ["node"],
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "tui-image-editor-angular": [
-        "./dist/tui-image-editor-angular"
-      ]
-    }
+      "tui-image-editor-angular": ["./dist/tui-image-editor-angular"]
+    },
+    "allowSyntheticDefaultImports": true
   }
 }
